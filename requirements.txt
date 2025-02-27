@@ -1,0 +1,9 @@
+# Manipulação de Dados
+pandas
+
+# Visualização de Dados
+plotly
+seaborn
+
+# Machine Learning
+scikit-learn
