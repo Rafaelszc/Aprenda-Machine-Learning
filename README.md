@@ -67,7 +67,7 @@ fig.show()
 
 No nosso caso temos esse exemplo:
 
-![bar](resources/assets/bar_graph.png)
+[![bar](resources/assets/bar_graph.png)](/src/pre_processing/data_visualization.ipynb)
 ## Usabilidade
 
 Para ter esse repositóprio e manipular os arquivos localmentem, basta copiar e colar os seguintes comandos no terminal:
