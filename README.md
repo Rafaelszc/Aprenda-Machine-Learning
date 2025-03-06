@@ -12,6 +12,8 @@
         - [Tipos de Dados](#tipos-de-dados)
             - [Numéricos e Categóricos](#numéricos-e-categóricos)
             - [X e Y](#x-e-y)
+        - [Codificacão](#codificacão)
+        - [Normalizacão](#normalizacão)
 
     - [Usabilidade](#usabilidade)
         - [Clone o Repositório](#clone-esse-repositório)
@@ -97,6 +99,12 @@ Veja nessas imagens:
 [![y](resources/assets/data_y.png)](src/pre_processing/pre_proessing.ipynb)
 
 Os valores X são as caracteristicas do vegetal, quanto o Y representa o preco de cada produto. Nosso intuito será descobrir qual seria o valor ideal de um vegetal partindo de suas caracteristicas.
+
+### Codificacão
+TODO
+
+### Normalizacão
+TODO
 
 ## Usabilidade
 
