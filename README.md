@@ -8,6 +8,11 @@
         - [Visualizacão](#visualizacão)
             - [Informacões gerais](#informacões-gerais)
             - [Gráfico em Barra](#gráfico-em-barra)
+    - [Tratamento dos Dados](#tratamento-dos-dados)
+        - [Tipos de Dados](#tipos-de-dados)
+            - [Numéricos e Categóricos](#numéricos-e-categóricos)
+            - [X e Y](#x-e-y)
+
     - [Usabilidade](#usabilidade)
         - [Clone o Repositório](#clone-esse-repositório)
         - [Instale as Dependências](#instale-as-dependências)
@@ -68,6 +73,31 @@ fig.show()
 No nosso caso temos esse exemplo:
 
 [![bar](resources/assets/bar_graph.png)](/src/pre_processing/data_visualization.ipynb)
+
+## Tratamento dos Dados
+
+Nessa parte será tratado quais dados serão utilizados partindo de suas respectivas funcões. Entender cada detalhe disso será de extrema importancia para evitar incoerências no processo de aprendizagem.
+
+### Tipos de Dados
+
+#### Numéricos e Categóricos
+
+Os dados serão reconhecidos de duas formas: numéricos e categóricos. Os numéricos são todos aqueles que apresentam valores inteiros ou reais (Integer, Float, Double...) que representam quantidades. Já os categóricos são aqueles que são definicões/categorias/nomes.
+
+Vale ressaltar que nem sempre que um valor for um número signfique que pode ser tratado como numérico, talvez seja um caso de um numérico categórico! Exemplo: se um banco de dados representar o gênero de uma pessoa por 0: masculino e 1: feminino, isso será um caso de numérico categórico. Por isso o processo de separacão de dados deve ser analisado com cautela, pois cada erro desse resulta em uma falha gigante nos calculos de predicão.
+
+#### X e Y
+
+Outra denominacão bastante utilizada no ambiente de ML são os dados X e Y. Os dados X representam aqueles que serão as características da predicão, ou seja, será nesses dados que o modelo irá identificar os padrões comparando com os resultados. Já o Y é justamente o resultado, será o alvo da predicão. Os dados X serão o caminho e o Y é o destino.
+
+Veja nessas imagens:
+
+[![x](resources/assets/data_x.png)](src/pre_processing/pre_proessing.ipynb)
+
+[![y](resources/assets/data_y.png)](src/pre_processing/pre_proessing.ipynb)
+
+Os valores X são as caracteristicas do vegetal, quanto o Y representa o preco de cada produto. Nosso intuito será descobrir qual seria o valor ideal de um vegetal partindo de suas caracteristicas.
+
 ## Usabilidade
 
 Para ter esse repositóprio e manipular os arquivos localmentem, basta copiar e colar os seguintes comandos no terminal:
