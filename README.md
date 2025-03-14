@@ -13,6 +13,7 @@
             - [Numéricos e Categóricos](#numéricos-e-categóricos)
             - [X e Y](#x-e-y)
         - [Codificacão](#codificacão)
+        - [Padronizacão](#padronização)
         - [Normalizacão](#normalizacão)
 
     - [Usabilidade](#usabilidade)
@@ -101,10 +102,50 @@ Veja nessas imagens:
 Os valores X são as caracteristicas do vegetal, quanto o Y representa o preco de cada produto. Nosso intuito será descobrir qual seria o valor ideal de um vegetal partindo de suas caracteristicas.
 
 ### Codificacão
-TODO
+Em geral os modelos não aceitam valores do tipo string, pois isso atraplha ou impossibilita os calculos matemáticos. Para resolver isso, esses dados devem ser transformados em valores numéricos, um dos recursos que nos auxiliam nessa atividade é o [LableEncoder](docs/LableEncoder.md), que retorna um ID para cada item da coluna.
 
-### Normalizacão
-TODO
+Encontramos o LableEncoder na biblioteca do scikit-learn:
+
+```python
+from sklearn.preprocessing import LableEncoder
+
+col_a_encoder = LableEncoder()
+
+col_a_encoded = col_a_encoder.fit_transform(col_a)
+```
+Assim, podemos sair disso:
+
+![uncode](resources/assets/veg_uncoded.png)
+
+Para isso:
+
+![code](resources/assets/veg_encoded.png)
+
+### Padronização
+A padronizacão se baseia em colocar os dados numérico em intervalos menores, para evitar que um modelo ache que determinada coluna X tenha uma importância maior que a Y apenas porque os seus valores estão em uma escala maior do que a outra, sendo que isso pode ser um fator irrelevante. Nesses casos que irá entrar a padronizacão, ela transformará os dados de tal forma que o seu desvio padrão seja 1 e a sua média 0
+
+![calc](resources/assets/scaler_calc.webp)
+
+O scikit-learn também disponibiliza uma ferramenta para fazer isso, chamada StandardScaler
+
+```python
+from sklearn.preprocessing import StandardScaler
+
+col_a_scaler = StandardScaler()
+
+col_s_scaled = col_a_scaler.fit_transform(col_a)
+```
+
+Saindo disso:
+
+![data_y](resources/assets/data_y.png)
+
+Para isso:
+
+![y_vector](resources/assets/y_scaled.png)
+
+### Normalização
+A normalização, diferente da padronização, visa deixar os dados em um intervalo de [-1, 1], no nosso caso ele será usado nos dados categóricos -que após o LableEncoder se transformaram em números- mas agora transformando-os em vetores canônicos representando cada variável das colunas, assim cada variável da coluna irá gerar uma nova coluna no nosso dataframe, recebendo 1 para a sua aparicão naquela linha e 0 para sua ausência.
 
 ## Usabilidade
 
