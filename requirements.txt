@@ -4,6 +4,7 @@ pandas
 # Visualização de Dados
 plotly
 seaborn
+nbformat>=4.2.0
 
 # Machine Learning
 scikit-learn
