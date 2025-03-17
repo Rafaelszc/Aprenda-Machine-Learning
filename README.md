@@ -15,6 +15,7 @@
         - [Codificacão](#codificacão)
         - [Padronizacão](#padronização)
         - [Normalizacão](#normalizacão)
+    - [Modelos de Classificacão](#modelos-de-classificacão)
 
     - [Usabilidade](#usabilidade)
         - [Clone o Repositório](#clone-esse-repositório)
@@ -146,6 +147,12 @@ Para isso:
 
 ### Normalização
 A normalização, diferente da padronização, visa deixar os dados em um intervalo de [-1, 1], no nosso caso ele será usado nos dados categóricos -que após o LableEncoder se transformaram em números- mas agora transformando-os em vetores canônicos representando cada variável das colunas, assim cada variável da coluna irá gerar uma nova coluna no nosso dataframe, recebendo 1 para a sua aparicão naquela linha e 0 para sua ausência.
+
+![normalization](resources/assets/normalization.png)
+
+## Modelos de Classificacão
+
+TODO
 
 ## Usabilidade
 
