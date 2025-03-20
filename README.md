@@ -14,7 +14,7 @@
             - [X e Y](#x-e-y)
         - [Codificacão](#codificacão)
         - [Padronizacão](#padronização)
-        - [Normalizacão](#normalizacão)
+        - [Normalizacão](#normalização)
     - [Modelos de Classificacão](#modelos-de-classificacão)
 
     - [Usabilidade](#usabilidade)
@@ -152,6 +152,15 @@ A normalização, diferente da padronização, visa deixar os dados em um interv
 
 ## Modelos de Classificacão
 
+Em geral, os modelos de classificacão servem para predizer valores categóricos com base nos dados que estão em X. Como exemplo: suponhamos que temos uma base de dados com dados de currículos para uma vaga de desenvolvimento de software, com base nesses dados e uma base de treinamento, poderíamos predizer qual área de desenvolvimento de software cada pessoa poderia ocupar. Por outro lado, os modelos de regressão servem para predizer valores numéricos reais, o que seriam o ideal para a nossa base de dados de vegetais, já que os resultados são os precos de cada vegetal com base em suas características.
+
+### Navie Bayes
+TODO
+
+### Random Forest Classifier
+TODO
+
+### K-Nearest Neighbor (KNN)
 TODO
 
 ## Usabilidade
