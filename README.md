@@ -15,6 +15,7 @@
     - [Codificacão](#codificacão)
     - [Padronização](#padronização)
     - [Normalização](#normalização)
+  - [Salvamento de variáveis](#salvamento-de-variáveis)
   - [Modelos de Classificacão](#modelos-de-classificacão)
     - [Navie Bayes](#navie-bayes)
     - [Random Forest Classifier](#random-forest-classifier)
@@ -22,6 +23,8 @@
   - [Usabilidade](#usabilidade)
     - [Clone o repositório](#clone-o-repositório)
     - [Instale as Dependências](#instale-as-dependências)
+      - [Usando o Pip](#usando-o-pip)
+      - [Usando o Anaconda](#usando-o-anaconda)
   - [Contatos](#contatos)
 
 
@@ -152,6 +155,47 @@ A normalização, diferente da padronização, visa deixar os dados em um interv
 
 ![normalization](resources/assets/normalization.png)
 
+## Salvamento de variáveis
+É possível salvar as variáveis do Python em um tipo especial de arquivo, esse tipo é o `.pkl`, para isso podemos utilizar a biblioteca `pickle` para poder fazer essa guarda de informação. As variáveis salvas, em nosso contexto, podem ser os dados pré processados e também os modelos treinados para poder ser utiizados em outros códigos.
+
+Para fazer isso, basta seguir o passo a passo:
+
+```python
+import pickle as pkl
+
+with open("file/path", "wb") as file:
+    pkl.dump([your, variables], file)
+```
+
+O arquivo é escrito usando o método `wb`, permitindo a escrita de dados em binário. Pode ser armazenado mais de uma variável, basta colocar em uma lista assim como está no exemplo.
+
+Para coletar essas variáveis, basta seguir o seguinte passo:
+
+```python
+import pickle as pkl
+
+with open("file/path", "rb") as file:
+    your, variables = pkl.load(file)
+```
+
+Dessa vez o método é o `rb`, que permite a leitura em binário. Os dados a serem coletados devem ser escritos na mesma sequência em que foram armazenados.
+
+Nos nossos casos foi usado da seguinte forma:
+
+```python
+KNN_BASED_DATA_PATH = join("..", "..", "resources", "database", "knn_classifier_data.pkl")
+
+with open(KNN_BASED_DATA_PATH, "wb") as file:
+    pkl.dump([x_train, x_test, y_train, y_test], file)
+```
+
+```python
+DATA_PATH=join("..", "..", "..", "resources", "database", "knn_classifier_data.pkl")
+
+with open(DATA_PATH, "rb") as file:
+    x_train, x_test, y_train, y_test= pkl.load(file)
+```
+
 ## Modelos de Classificacão
 
 Em geral, os modelos de classificacão servem para predizer valores categóricos com base nos dados que estão em X. Como exemplo: suponhamos que temos uma base de dados com dados de currículos para uma vaga de desenvolvimento de software, com base nesses dados e uma base de treinamento, poderíamos predizer qual área de desenvolvimento de software cada pessoa poderia ocupar. Por outro lado, os modelos de regressão servem para predizer valores numéricos reais, o que seriam o ideal para a nossa base de dados de vegetais, já que os resultados são os precos de cada vegetal com base em suas características.
@@ -177,11 +221,27 @@ git clone https://github.com/Rafaelszc/Aprenda-Machine-Learning.git
 
 ### Instale as Dependências
 
+#### Usando o Pip
+
 ```bash
 cd Aprenda-Machine-Learning/
 
 pip install -r requirements.txt
 ```
+
+Selecione o env do jupyter que foi instalado as requisições
+
+#### Usando o Anaconda
+
+```bash
+cd Aprenda-Machine-Learning/
+
+conda env create -f environment.yml
+
+conda activate learn_machine_learning_env
+```
+
+Selecione o env `learn_machine_learning_env` como a env que irá rodar no jupyter
 
 ## Contatos
 <div class="contact-images" align=center>
