@@ -139,7 +139,7 @@ from sklearn.preprocessing import StandardScaler
 
 col_a_scaler = StandardScaler()
 
-col_s_scaled = col_a_scaler.fit_transform(col_a)
+col_a_scaled = col_a_scaler.fit_transform(col_a)
 ```
 
 Saindo disso:
@@ -151,7 +151,19 @@ Para isso:
 ![y_vector](resources/assets/y_scaled.png)
 
 ### Normalização
-A normalização, diferente da padronização, visa deixar os dados em um intervalo de [-1, 1], no nosso caso ele será usado nos dados categóricos -que após o LableEncoder se transformaram em números- mas agora transformando-os em vetores canônicos representando cada variável das colunas, assim cada variável da coluna irá gerar uma nova coluna no nosso dataframe, recebendo 1 para a sua aparicão naquela linha e 0 para sua ausência.
+Um algoritmo bastante utilizado para a normalizção -que visa deixar os valores entre 0 e 1- é o OneHotEncoder, na qual transforma os dados em vetores canônicos para representar sua presença ou ausência naquela célula.
+
+```python
+from sklearn.preprocessing import OneHotEncoder
+
+col_a_encoder = OneHotEncoder(sparse_output=False)
+
+col_a_encoded = col_a_encoder.fit_transform(col_a)
+
+pd.DataFrame(data=col_a_encoded, columns=col_a_encoder.get_feature_names_out())
+```
+
+Agora, será adicionada N colunas que representam as N diferentes features de cada coluna. Esse algoritmo é extremamente essêncial principalmente para modelos que se baseam em distâncias, tais como KNN, regressores e redes neurais
 
 ![normalization](resources/assets/normalization.png)
 
