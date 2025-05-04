@@ -25,6 +25,7 @@
     - [SGD Regressor](#sgd-regressor)
   - [Ensambles](#ensambles)
     - [AutoGluon](#autogluon)
+  - [Redes Neurais](#redes-neurais)
   - [Usabilidade](#usabilidade)
     - [Clone o repositório](#clone-o-repositório)
     - [Instale as Dependências](#instale-as-dependências)
@@ -240,6 +241,9 @@ TODO
 TODO
 
 ## Modelos de Regressão
+De forma geral, modelos de regressão retornam valores numéricos reais e trabalham em sua maioria com todas as fazes de pré processamentos. 
+
+Como exemplo, vamos supor que tenhamos uma base de produtos de um comércio e queremos saber o preço ideal para os novos produtos que entram em estoque. Como o resultado é um número real e não uma categoria, os modelos de regressão são os ideais para esses casos. O que se encaixa bem na base de vegetais.
 
 ### K-Nearest Neighborn Regressor (KNN Regressor)
 TODO
@@ -251,6 +255,8 @@ TODO
 
 ### AutoGluon
 TODO
+
+## Redes Neurais
 
 ## Usabilidade
 
