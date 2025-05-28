@@ -19,7 +19,12 @@
   - [Modelos de Classificacão](#modelos-de-classificacão)
     - [Navie Bayes](#navie-bayes)
     - [Random Forest Classifier](#random-forest-classifier)
-    - [K-Nearest Neighbor (KNN)](#k-nearest-neighbor-knn)
+    - [K-Nearest Neighborn Classifier (KNN)](#k-nearest-neighborn-classifier-knn)
+  - [Modelos de Regressão](#modelos-de-regressão)
+    - [K-Nearest Neighborn Regressor (KNN Regressor)](#k-nearest-neighborn-regressor-knn-regressor)
+    - [SGD Regressor](#sgd-regressor)
+  - [Ensambles](#ensambles)
+    - [AutoGluon](#autogluon)
   - [Usabilidade](#usabilidade)
     - [Clone o repositório](#clone-o-repositório)
     - [Instale as Dependências](#instale-as-dependências)
@@ -218,7 +223,20 @@ TODO
 ### Random Forest Classifier
 TODO
 
-### K-Nearest Neighbor (KNN)
+### K-Nearest Neighborn Classifier (KNN)
+TODO
+
+## Modelos de Regressão
+
+### K-Nearest Neighborn Regressor (KNN Regressor)
+TODO
+
+### SGD Regressor
+TODO
+
+## Ensambles
+
+### AutoGluon
 TODO
 
 ## Usabilidade
