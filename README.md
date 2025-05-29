@@ -133,6 +133,16 @@ Para isso:
 
 ![code](resources/assets/veg_encoded.png)
 
+Para poder reverter o processo de codificação (decodificação), o LableEncoder disponibiliza a função `inverse_transform()`.
+
+```python
+from sklearn.preprocessing import LableEncoder
+
+encoder = LableEncoder()
+
+col_decoded = encoder.inverse_transform(encoded_data)
+```
+
 ### Padronização
 A padronizacão se baseia em colocar os dados numérico em intervalos menores, para evitar que um modelo ache que determinada coluna X tenha uma importância maior que a Y apenas porque os seus valores estão em uma escala maior do que a outra, sendo que isso pode ser um fator irrelevante. Nesses casos que irá entrar a padronizacão, ela transformará os dados de tal forma que o seu desvio padrão seja 1 e a sua média 0
 
@@ -213,6 +223,8 @@ DATA_PATH=join("..", "..", "..", "resources", "database", "knn_classifier_data.p
 with open(DATA_PATH, "rb") as file:
     x_train, x_test, y_train, y_test= pkl.load(file)
 ```
+
+O pickle é bastante interessante para exportar modelos treinados para outros arquivos/projetos. Assim, permitindo compartilhar e baixar modelos locais pré treinados.
 
 ## Modelos de Classificacão
 
