@@ -31,6 +31,7 @@
       - [Usando o Pip](#usando-o-pip)
       - [Usando o Anaconda](#usando-o-anaconda)
   - [Contatos](#contatos)
+  - [Referências](#referências)
 
 
 ## Introducão
@@ -279,3 +280,21 @@ Selecione o env `learn_machine_learning_env` como a env que irá rodar no jupyte
     <a href="mailto:rafaelbjj84@gmail.com"><img src="https://img.shields.io/badge/GMAIL-100000?style=for-the-badge&logo=gmail&logoColor=red" style="border-radius: 10px; height: 35px"></a>
     <a href="https://www.linkedin.com/in/rafael-souza-5461762b8"><img src="https://img.shields.io/badge/LINKEDIN-100000?style=for-the-badge&logo=linkedin&logoColor=blue" style="border-radius: 10px; height: 35px; padding-left: 2px;"></a>
 </div>
+
+## Referências
+
+SCIKIT-LEARN. scikit-learn: machine learning in Python — scikit-learn 0.20.3 documentation. Disponível em: <https://scikit-learn.org/stable/index.html>. 
+
+PLOTLY. Plotly Python Graphing Library. Disponível em: <https://plotly.com/python/>.
+
+JAIN, D. Data Preprocessing in Data Mining. Disponível em: <https://www.geeksforgeeks.org/data-preprocessing-in-data-mining/>. 
+
+SCIKIT-LEARN. sklearn.preprocessing.LabelEncoder — scikit-learn 0.22.1 documentation. Disponível em: <https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html>.
+
+‌SCIKIT-LEARN. sklearn.preprocessing.OneHotEncoder — scikit-learn 0.22 documentation. Disponível em: <https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html>.
+
+‌NAIR, A. Standardization vs Normalization | Towards Data Science. Disponível em: <https://towardsdatascience.com/standardization-vs-normalization-dc81f23085e3/>.
+
+‌GEEKSFORGEEKS. Understanding Python Pickling with example. Disponível em: <https://www.geeksforgeeks.org/understanding-python-pickling-example/>.
+
+‌
