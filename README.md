@@ -26,6 +26,12 @@
   - [Ensambles](#ensambles)
     - [AutoGluon](#autogluon)
   - [Redes Neurais](#redes-neurais)
+    - [Aprendizagem da rede neural](#aprendizagem-da-rede-neural)
+      - [Feedforward](#feedforward)
+      - [Loss function](#loss-function)
+      - [Backpropagation](#backpropagation)
+      - [Iteration e Epochs](#iteration-e-epochs)
+    - [Implementacão do algoritmo](#implementacão-do-algoritmo)
   - [Usabilidade](#usabilidade)
     - [Clone o repositório](#clone-o-repositório)
     - [Instale as Dependências](#instale-as-dependências)
@@ -147,7 +153,9 @@ col_decoded = encoder.inverse_transform(encoded_data)
 ### Padronização
 A padronizacão se baseia em colocar os dados numérico em intervalos menores, para evitar que um modelo ache que determinada coluna X tenha uma importância maior que a Y apenas porque os seus valores estão em uma escala maior do que a outra, sendo que isso pode ser um fator irrelevante. Nesses casos que irá entrar a padronizacão, ela transformará os dados de tal forma que o seu desvio padrão seja 1 e a sua média 0
 
-![calc](resources/assets/scaler_calc.webp)
+```math
+z=\frac{x-\mu}{\sigma}
+```
 
 O scikit-learn também disponibiliza uma ferramenta para fazer isso, chamada StandardScaler
 
@@ -257,7 +265,29 @@ TODO
 TODO
 
 ## Redes Neurais
+Redes Neurais ou Redes Neurais Artificiais é um tipo de modelo que tenta simular o funcionamento de neurônios biológicos. Na qual, funciona com base em um grafo onde os nós são os neurônios. Cada neurônio faz o papel de uma combinacão linear:
 
+```math
+f(x)=x_1*w_1+x_2*w_2+...x_n*w_n
+```
+
+Onde Xi é um, Wi é um peso associado ao neurônio. Um conjunto de nós que fazem, em paralelo, essa combinacão linear é chamada de camada. Quando cada nó de uma camada se conecta a todos os nós da camada seguinte, chama-se camada densa.
+
+Essa formula da combinacão linear está para as redes neurais assim como o 0 e 1 estão para a computacão. Porém, esse conceito é limitado a linearidade da funcão, fazendo com que não haja distincão entre uma rede neural e um modelo de regressão logístico/linear. Com isso, é acrescentado uma funcão de ativacão nos neurônios e um bias. O bias pode ser interpretado como uma margem, quanto maior o bias e os pesos, mais relevante é a análise daquela camada:
+
+```math
+f(x)=(x_1*w_1+x_2*w_2+...x_n*w_n)+b
+```
+
+A funcão de ativacão dos nós serve para evitar ruídos e padronizar os formatos dos dados, além de evitar uma gama de dados nulos. As funcões mais conhecidas são: ReLu, Leaky ReLu, Sigmoid, Tanh, Softmax e Linear. Terá um tópico exclusivo para tratar de funcões de ativacão.
+
+Para a programacão da rede neural será feita com as bibliotecas [TensorFlow](https://www.tensorflow.org/) e [Keras](https://keras.io/).
+### Aprendizagem da rede neural
+#### Feedforward
+#### Loss function
+#### Backpropagation
+#### Iteration e Epochs
+### Implementacão do algoritmo
 ## Usabilidade
 
 Para ter esse repositóprio e manipular os arquivos localmentem, basta copiar e colar os seguintes comandos no terminal:
