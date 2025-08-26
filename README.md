@@ -28,6 +28,7 @@
   - [Redes Neurais](#redes-neurais)
     - [Aprendizagem da rede neural](#aprendizagem-da-rede-neural)
       - [Feedforward](#feedforward)
+      - [Activation Function](#activation-function)
       - [Loss function](#loss-function)
       - [Backpropagation](#backpropagation)
       - [Iteration e Epochs](#iteration-e-epochs)
@@ -284,6 +285,7 @@ A funcão de ativacão dos nós serve para evitar ruídos e padronizar os format
 Para a programacão da rede neural será feita com as bibliotecas [TensorFlow](https://www.tensorflow.org/) e [Keras](https://keras.io/).
 ### Aprendizagem da rede neural
 #### Feedforward
+#### Activation Function
 #### Loss function
 #### Backpropagation
 #### Iteration e Epochs
