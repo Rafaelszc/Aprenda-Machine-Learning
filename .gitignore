@@ -188,3 +188,6 @@ ipython_config.py
 
 # AutoGluon Models
 *AutogluonModels*
+
+# NN Tuner Files
+*Tuner*
