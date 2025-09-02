@@ -241,7 +241,42 @@ O pickle é bastante interessante para exportar modelos treinados para outros ar
 Em geral, os modelos de classificacão servem para predizer valores categóricos com base nos dados que estão em X. Como exemplo: suponhamos que temos uma base de dados com dados de currículos para uma vaga de desenvolvimento de software, com base nesses dados e uma base de treinamento, poderíamos predizer qual área de desenvolvimento de software cada pessoa poderia ocupar. Por outro lado, os modelos de regressão servem para predizer valores numéricos reais, o que seriam o ideal para a nossa base de dados de vegetais, já que os resultados são os precos de cada vegetal com base em suas características.
 
 ### Navie Bayes
-TODO
+Naive Bayes é um classificador probabilístico simples, isso é, um modelo de classificação que calcula as diferentes probabilidades para cada diferente classe dado aos termos de entrada, baseado no "Teorema de Bayes":
+
+$$
+P(y∣X)=\frac{P(X∣y)⋅P(y)}{P(X)}
+$$
+Onde, $P(y\; |\; X)$ é probabilidade da classe $y$ baseada nas variáveis de entrada $X$, $P(X\; | \;y)$ são as probabilidades anteriores das variáveis recebidas $X$ dada a classe $y$, $P(y)$ é a probabilidade anterior da classe $y$ e $P(X)$ é a probabilidade marginal dos termos.
+
+O termo "Naive" em Naive Bayes vem da própria palavra em inglês que significa "Ingenuo". Isso acontece devido ao modelo assumir cada termo de entrada como independente dado a classe, Logo temos:
+$$
+	P(X) = P(X_1 ... X_n) ∴ P(y\;|\;X_1 ... X_n) = \frac{P(y) * P(X_1\;|\; y)...*P(X_n\;|\;y)}{P(X_1)...*P(X_n)}
+$$
+Desse modo o teorema de Bayes torna-se:
+$$
+	P(y\;|\;X_1 ... X_n) = \frac{P(y) * ∏^n_{i=1} P(X_i\;|\;y)}{P(X_1)... P(X_n)}
+$$
+Dado que o denominador $P(X_1 ... X_N)$ seja uma contante temos:
+$$
+P(y\;|\; X_1 ... X_n) = P(y) * ∏^n_{i=1} P(X_i\;|\;y)
+$$
+Assim para funcionar nosso modelo calculamos os valores posteriores para cada classe y e escolhemos a com maior probabilidade.
+$$
+	ŷ = arg\;max_yP(y) * ∏^n_{i=1} P(X_i|y)
+$$
+Isso torna-se nosso classificador.
+
+Os diferentes Naive Bayes se diferem principalmente pelas suposições que fazem sobre a distribuição de $P(X_i\; |\; y)$.
+
+Para valores continuos nos assumimos a "Distribuição Gaussiana": 
+$$
+P(x_i\;|\;y) = \frac{1}{\sqrt{2\piσ^2_y}}\;exp\; (-\frac{(x_i-μ_y)^2}{2σ^2_y})
+$$
+Onde:
+$μ_y$ é a media dos valores do termo $x_i$ para a classe $y$;
+$σ^2_y$ é o desvio padrão do termo $x_i$ para a classe $y$;
+
+Assim temos o que chamamos de Gaussian Naive Bayes, ou Naive Bayes Gaussiano.
 
 ### Random Forest Classifier
 TODO
