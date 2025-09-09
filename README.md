@@ -243,35 +243,36 @@ Em geral, os modelos de classificacão servem para predizer valores categóricos
 ### Navie Bayes
 Naive Bayes é um classificador probabilístico simples, isso é, um modelo de classificação que calcula as diferentes probabilidades para cada diferente classe dado aos termos de entrada, baseado no "Teorema de Bayes":
 
-$$
+```math
 P(y∣X)=\frac{P(X∣y)⋅P(y)}{P(X)}
-$$
+```
 Onde, $P(y\; |\; X)$ é probabilidade da classe $y$ baseada nas variáveis de entrada $X$, $P(X\; | \;y)$ são as probabilidades anteriores das variáveis recebidas $X$ dada a classe $y$, $P(y)$ é a probabilidade anterior da classe $y$ e $P(X)$ é a probabilidade marginal dos termos.
 
 O termo "Naive" em Naive Bayes vem da própria palavra em inglês que significa "Ingenuo". Isso acontece devido ao modelo assumir cada termo de entrada como independente dado a classe, Logo temos:
-$$
+
+```math
 	P(X) = P(X_1 ... X_n) ∴ P(y\;|\;X_1 ... X_n) = \frac{P(y) * P(X_1\;|\; y)...*P(X_n\;|\;y)}{P(X_1)...*P(X_n)}
-$$
+```
 Desse modo o teorema de Bayes torna-se:
-$$
+```math
 	P(y\;|\;X_1 ... X_n) = \frac{P(y) * ∏^n_{i=1} P(X_i\;|\;y)}{P(X_1)... P(X_n)}
-$$
+```
 Dado que o denominador $P(X_1 ... X_N)$ seja uma contante temos:
-$$
+```math
 P(y\;|\; X_1 ... X_n) = P(y) * ∏^n_{i=1} P(X_i\;|\;y)
-$$
+```
 Assim para funcionar nosso modelo calculamos os valores posteriores para cada classe y e escolhemos a com maior probabilidade.
-$$
+```math
 	ŷ = arg\;max_yP(y) * ∏^n_{i=1} P(X_i|y)
-$$
+```
 Isso torna-se nosso classificador.
 
 Os diferentes Naive Bayes se diferem principalmente pelas suposições que fazem sobre a distribuição de $P(X_i\; |\; y)$.
 
 Para valores continuos nos assumimos a "Distribuição Gaussiana": 
-$$
+```math
 P(x_i\;|\;y) = \frac{1}{\sqrt{2\piσ^2_y}}\;exp\; (-\frac{(x_i-μ_y)^2}{2σ^2_y})
-$$
+```
 Onde:
 $μ_y$ é a media dos valores do termo $x_i$ para a classe $y$;
 $σ^2_y$ é o desvio padrão do termo $x_i$ para a classe $y$;
@@ -293,7 +294,13 @@ Como exemplo, vamos supor que tenhamos uma base de produtos de um comércio e qu
 TODO
 
 ### SGD Regressor
-TODO
+O **SDGRegressor** é um modelo de _Machine Learning_ baseado em **Stochastic Gradient Descent (SGD)**, em vez do **Batch Gradient Descent**. Dessa forma, o modelo apresenta maior eficiência e é de mais simples de implementação em diferentes aplicações.
+
+A **descida de gradiente** é um algoritmo de otimização iterativa usado para minimizar funções de custo, que representam o quão distantes estão as predições feitas pelo modelo em relação aos valores reais. O principal objetivo é ajustar os parâmetros do modelo de forma que o erro seja minimizado.
+
+Na descida de gradiente tradicional, o gradiente é calculado com base em todo o conjunto de dados, o que pode ser computacionalmente custoso para grandes _datasets_.
+
+Por outro lado, a descida de gradiente estocástica realiza atualizações de parâmetros a cada nova amostra processada. Isso permite que o modelo se adapte mais rapidamente aos dados, sendo especialmente vantajoso em grandes bases. Dessa forma, reduz-se a função de custo e a margem de erro final.
 
 ## Ensambles
 
