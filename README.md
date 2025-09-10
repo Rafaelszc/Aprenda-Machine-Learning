@@ -334,7 +334,15 @@ De forma geral, modelos de regressão retornam valores numéricos reais e trabal
 Como exemplo, vamos supor que tenhamos uma base de produtos de um comércio e queremos saber o preço ideal para os novos produtos que entram em estoque. Como o resultado é um número real e não uma categoria, os modelos de regressão são os ideais para esses casos. O que se encaixa bem na base de vegetais.
 
 ### K-Nearest Neighborn Regressor (KNN Regressor)
-TODO
+- O princípio entre os métodos de Nearest Neighbors(Vizinho mais Próximo) é encontrar um, já pré definido, número de treinamento de amostras mais próximas entre a distância de dois pontos, e prever o rótulo deles. O número de amostras pode ser  uma constante K definida pelo usuário, ou baseada na densidade de pontos do local. A distância pode, no geral, ser qualquer medida métrica, sendo o padrão Euclidiano a escolha mais comum.
+- Os métodos baseados em Neighbors são conhecidos como machine learning não generalizantes métodos, desde que eles simplesmente lembram todo desse treinamento de dados.
+- O modelo em regressão pode ser utilizado em casos que os rótulos dos dados são contínuos, e não discretos. O rótulo atribuído ao ponto de consulta é calculado baseado no principal dos rótulos de seu vizinho mais próximo.
+- A regressão básica Nearest Neighbors usa pesos uniformes, isso é, em cada local de vizinhança contribui uniformemente para a classificação de ponto de consulta. Em algumas circunstâncias, isso pode ser vantajoso pesar os pontos de modo que os próximos pontos contribuem mais para a regressão do que os pontos mais distantes
+#### Weight
+    (weight= “uniform”) # indica peso igual para todos os pontos
+    (weight = “distance”)  # indica peso proporcional ao inverso da distância entre os pontos de consulta
+
+
 
 ### SGD Regressor
 O **SDGRegressor** é um modelo de _Machine Learning_ baseado em **Stochastic Gradient Descent (SGD)**, em vez do **Batch Gradient Descent**. Dessa forma, o modelo apresenta maior eficiência e é de mais simples de implementação em diferentes aplicações.
@@ -425,6 +433,9 @@ PLOTLY. Plotly Python Graphing Library. Disponível em: <https://plotly.com/pyth
 JAIN, D. Data Preprocessing in Data Mining. Disponível em: <https://www.geeksforgeeks.org/data-preprocessing-in-data-mining/>. 
 
 SCIKIT-LEARN. sklearn.preprocessing.LabelEncoder — scikit-learn 0.22.1 documentation. Disponível em: <https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html>.
+
+SCIKIT-LEARN. 1.6. Nearest Neighbors — scikit-learn 1.7.2 documentation. Disponível em: <https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression>.
+
 
 ‌SCIKIT-LEARN. sklearn.preprocessing.OneHotEncoder — scikit-learn 0.22 documentation. Disponível em: <https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html>.
 
