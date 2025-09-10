@@ -280,7 +280,50 @@ $σ^2_y$ é o desvio padrão do termo $x_i$ para a classe $y$;
 Assim temos o que chamamos de Gaussian Naive Bayes, ou Naive Bayes Gaussiano.
 
 ### Random Forest Classifier
-TODO
+É um modelo de classificação que se baseia em conjuntos de árvores de decisões, criadas a partir de diferentes subconjuntos aleatórios de dados ou recursos.
+- Decision Tree(Árvore de Decisão):
+    A árvore de decisão é um modelo simples de interpretar, formada por raiz, que representa um atributo ou característica, ramos, representando uma regra de decisão, e nós, o resultado, é semelhante a um fluxograma que simula um pensamento humano auxiliando na tomada de decisões.
+    A medida de seleção de atributos particiona os dados da melhor forma possível, também sendo regras de divisão que nos ajuda a determinar pontos de interrupção em um nó, fornecendo uma classificação para cada atributo. O atributo com a melhor pontuação será escolhido como um atributo de divisão.
+As medidas de seleção são:
+#### Ganho de Informação(Gain):
+ O ganho de informações baseia-se na Entropia, é a impureza em um grupo de exemplos, sendo o ganho de informação a diminuição da entropia, calculando a diferença da entropia média depois e a entropia antes da divisão do conjunto de dados.
+ 
+$$ \text{Info(D)} = - \sum_{i=1}^{m} p_i \log_2(p_i) $$
+
+- Sendo Pi a probabilidade de uma tupla arbitraria em D, pertencente a Ci
+- Porém, tende a favorecer atributos com maiores números de valores
+
+ $$ \text{Info}_a(D) = \sum_{j=1}^{V} \frac {|D_j|}{|D|} \cdot \text{Info}(D_j) $$
+
+ $$ \text{Gain(A)} = \text{Info(D)} - \text{Info}_A(D) $$
+
+- O maior Gain(A) é escolhido como atributo de divisão no nó
+#### Relação de ganho: Utiliza-se o Split Info para a normalização da tendência do ganho de informações:
+
+$$ \text{SplintInfo}_A(D) = - \sum_{j=1}^{V} \frac {|D_j|}{|D|} \cdot \log{2}^{\frac{|D_j|}{|D|}} $$
+
+#### Taxa de ganho(GainRatio):
+
+$$ \text{GainRatio(A)} = \frac{Gain(A)}{SplintInfo_A(D)} $$
+
+- O atributo com maior GainRatio é escolhido como raiz da árvore
+#### Índice de Gini :
+
+$$ \text{Gini(D)} = 1 - \sum_{i=1}^{m} Pi^2 $$
+
+- Pi é a probabilidade de D pertencer a Ci
+- Considera uma divisão binária em cada atributo
+
+
+$$  \text{Gini}_A(D) = \frac{|D1|}{|D|} \text{Gini}(D_1) + \frac{|D2|}{|D|} \text{Gini}(D_2) $$
+
+
+$$ \bigtriangleup{Gini(A)} = \text{Gini(D)} - \text{Gini}_A(D) $$
+
+
+- O atributo com o menor índice de Gini é escolhido como raiz da árvore
+
+
 
 ### K-Nearest Neighborn Classifier (KNN)
 TODO
@@ -389,4 +432,4 @@ SCIKIT-LEARN. sklearn.preprocessing.LabelEncoder — scikit-learn 0.22.1 documen
 
 ‌GEEKSFORGEEKS. Understanding Python Pickling with example. Disponível em: <https://www.geeksforgeeks.org/understanding-python-pickling-example/>.
 
-‌
+‌DATACAMP. Random Forest Classification with Scikit-Learn. Disponível em: <https://www.datacamp.com/tutorial/random-forests-classifier-python>.
